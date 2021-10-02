@@ -1,0 +1,17 @@
+Promoção de tipos
+    coerção = conversão inplícita:
+        quando o compilador converte automáticamente
+        char < int < long < float < double
+        
+        float divisão(int num1, float num2)
+            {
+                return num1 / num2;
+            }
+
+    cast = conversão explícita:
+        O programador faz manualmente a conversão. coloca entre parenteses.
+        
+            float divisão(int num1, int num2)
+            {
+                return (float)num1 / (float)num2;
+            }
