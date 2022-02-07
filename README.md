@@ -1,1 +1,3 @@
- 
+ ## cppstudies
+
+ C++ Study Exercises
