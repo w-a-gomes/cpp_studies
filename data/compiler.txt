@@ -1,0 +1,25 @@
+Usar "g++" seguido do nome do arquivo ".cpp", gerará o executavel de nome "a.out".
+Para escolher o nome de saida do executável, use "-o", que é a abreviação de "output".
+A extenção do executável pode ser ".o" ou ".out", e é opcional.
+    g++ main.cpp
+    ./a.out
+
+    g++ main.cpp -o meuprograma
+    ./meuprograma
+
+    g++ main.cpp -o meuprograma.o
+    ./meuprograma.o
+
+    g++ main.cpp -o meuprograma.out
+    ./meuprograma.out
+
+Versão do compilador
+    g++ main.cpp -o meuprograma -std=c++11
+    ./meuprograma
+
+Varios arquivos
+    g++ *.cpp -o a.out
+
+O equivalente do comando make do Linux e Mac para o Windows se chama mingw32-make, caso se tenha realizado a instalação do pacote mingw do início do curso.
+Seu uso se faz do mesmo modo que o comando make, basta rodar:
+    mingw32-make mainfile

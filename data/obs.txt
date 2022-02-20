@@ -1,0 +1,15 @@
+https://en.cppreference.com/w/cpp/io/basic_ifstream
+https://www.cplusplus.com/reference/fstream/ifstream/
+
+
+Valor absoluto sem numeros negativos
+    abs(numero1 + numero2)
+
+tamanho da palavra é size()
+
+Não se inclui o arquivo ".cpp" e sim o header ".hpp".
+
+O que foi incluido no Header file (hpp) não precisa
+ser incuido no seu arquivo equivalente (cpp)
+
+Variaveis globais são definidas nas libs como "extern".

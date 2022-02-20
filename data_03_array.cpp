@@ -1,19 +1,9 @@
 #include <iostream>
-
-void ArrayEstatico();
-void ArrayDinamico();
-void PrintVetorInt(int Array[], int TamanhoVetor);
-void InverterVetor(int *Vector, int Tamanho);
+void InverterArray(int *Array, int Tamanho);
 
 int main()
 {
-    ArrayEstatico();
-    return 0;
-}
-
-void ArrayEstatico()
-{   
-    // Array estático é uma variavel composta (varios valores) e homogenea (1 tipo)
+    // Array (estático) é uma variavel composta (varios valores) e homogenea (1 tipo)
 
     // Array estilo C++
     int IntArray[5]{1, 2, 3, 4, 5};
@@ -48,9 +38,6 @@ void ArrayEstatico()
     }
     std::cout << std::endl;
 
-    // Print com função
-    PrintVetorInt(IntArray, 5);
-
     // Tamanho em bityes da variavel vetor/array
     std::cout << std::endl;
     for (int i = 0; i < 20; i++){std::cout << "-";}
@@ -70,20 +57,23 @@ void ArrayEstatico()
     std::cout << "Tamanho do 'IntArray': " << sizeof(IntArray)/sizeof(int)<< std::endl;
     std::cout << "Tamanho do 'CharArray': " << sizeof(CharArray)/sizeof(char)<< std::endl;
 
+    // Melhor
+    // int len = sizeof(vetor)/sizeof(vetor[0]);
+
     // Array invertido
     std::cout << std::endl;
     for (int i = 0; i < 20; i++){std::cout << "-";}
     std::cout << std::endl << "Array invertido" << std::endl << std::endl;
     // Inverte
-    InverterVetor(IntArray, sizeof(IntArray) / sizeof(int));
+    InverterArray(IntArray, sizeof(IntArray) / sizeof(int));
     // Mostra
     for (int i = 0; i < sizeof(IntArray) / sizeof(int); i++) std::cout << IntArray[i];
     std::cout << std::endl;
+
+    return 0;
 }
 
-void ArrayDinamico(){}
-
-void InverterVetor(int *Vector, int Tamanho)
+void InverterArray(int *Array, int Tamanho)
 {
     // Não da pra saber a quandidade de itens do 'array inteiro' dentro da função com 'sizeof'
     // porque é um ponteiro de inteiro. sizeof calcula o ponteiro como um unico endereço de mem.
@@ -93,25 +83,16 @@ void InverterVetor(int *Vector, int Tamanho)
     // 'Tamanho' é 5, mas os indices vão de 0 a 4. Por isso 'Tamanho' - 1
     for (int i = 0; i < Tamanho; i++)
     {
-        TempVector[(Tamanho - 1) - i] = Vector[i];
+        TempVector[(Tamanho - 1) - i] = Array[i];
     }
 
     // Percorre um array temporário de valores corretos já invertidos
     // e atualiza o array passado por ponteiro.
     for (int i = 0; i < Tamanho; i++)
     {
-        Vector[i] = TempVector[i];
+        Array[i] = TempVector[i];
     }
 
     // Nota: não precisei desrefenciar o ponteiro
-    
-}
-void PrintVetorInt(int Array[], int TamanhoVetor)
-{
-    for (int i = 0; i < TamanhoVetor; i++)
-    {
-        std::cout << Array[i] << ", ";
-    }
-    std::cout << std::endl;
     
 }

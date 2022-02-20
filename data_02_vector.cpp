@@ -8,8 +8,10 @@ int main()
     std::vector<std::string> meu_vetor {"Shell", "Python", "C++", "C"};
     // push_back diciona ao fim do vector e antes do '\0', ou seja penultimo item.
     // se o pop_back vier antes do push_back, haverá erro, pois o push_back procura o /0
+
     // para inserir antes dele
     meu_vetor.push_back("Linux");
+
     // Remove \0, o ultimo elemeto
     meu_vetor.pop_back();
 
