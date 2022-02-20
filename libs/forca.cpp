@@ -3,15 +3,12 @@
 #include <map>
 #include <vector>
 
-#include "letra_existe.hpp"
 #include "nao_acertou.hpp"
 #include "imprime_cabecalho.hpp"
 #include "imprime_erros.hpp"
 #include "imprime_palavra.hpp"
 #include "chuta.hpp"
-#include "le_arquivo.hpp"
 #include "sorteia_palavra.hpp"
-#include "salva_arquivo.hpp"
 #include "adiciona_palavra.hpp"
 
 std::string palavra_secreta;
@@ -28,7 +25,7 @@ int main () {
 
         imprime_palavra(palavra_secreta, chutou);
 
-        chuta(&chutou, &chutes_errados);
+        chuta(&palavra_secreta, &chutou, &chutes_errados);
     }
 
     std::cout << "Fim de jogo!" << std::endl;
