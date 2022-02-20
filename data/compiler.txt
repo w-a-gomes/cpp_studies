@@ -17,8 +17,18 @@ Versão do compilador
     g++ main.cpp -o meuprograma -std=c++11
     ./meuprograma
 
-Varios arquivos
+
+Compilar todos os arquivos (lento)
     g++ *.cpp -o a.out
+
+Gerar as unidades de tradução (compilar só as libs - lento) e compilar (rápido).
+    g++ -c *.cpp
+    g++ *.o -o main
+
+### LINKER ###
+Só recompile a lib que foi alterada e repita a compilação (rápido)
+    g++ -c lib_alterada.cpp
+    g++ *.o -o main
 
 O equivalente do comando make do Linux e Mac para o Windows se chama mingw32-make, caso se tenha realizado a instalação do pacote mingw do início do curso.
 Seu uso se faz do mesmo modo que o comando make, basta rodar:
