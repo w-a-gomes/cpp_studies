@@ -2,4 +2,4 @@
 
 #include <string>
 
-bool letra_existe(std::string* palavra_secreta, char chute);
+bool letra_existe(std::string &palavra_secreta, char &chute);
