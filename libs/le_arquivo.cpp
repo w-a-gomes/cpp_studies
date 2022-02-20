@@ -11,7 +11,6 @@ std::vector<std::string> le_arquivo(){
         int quantidade_palavras;
         arquivo >> quantidade_palavras;
 
-
         std::vector<std::string> palavras_do_arquivo;
 
         for(int i=0;i<quantidade_palavras;i++){
