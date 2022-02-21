@@ -13,3 +13,5 @@ O que foi incluido no Header file (hpp) não precisa
 ser incuido no seu arquivo equivalente (cpp)
 
 Variaveis globais são definidas nas libs como "extern".
+
+"static" mantem as variaveis globais dentro de uma unidade de tradução
