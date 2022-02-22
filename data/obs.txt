@@ -15,3 +15,5 @@ ser incuido no seu arquivo equivalente (cpp)
 Variaveis globais são definidas nas libs como "extern".
 
 "static" mantem as variaveis globais dentro de uma unidade de tradução
+
+Sobrecarga: Funções com nome igual e assinaturas diferentes
