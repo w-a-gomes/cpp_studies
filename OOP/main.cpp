@@ -4,25 +4,35 @@
 #include "conta.hpp"
 
 int main() {
-    Conta MinhaConta("Alien", 123);
-    std::cout << "Nome do titular da conta: " << MinhaConta.titular() << std::endl;
-    std::cout << "Número da conta: " << MinhaConta.numero() << std::endl;
-    std::cout << "Valor da conta: " << MinhaConta.saldo() << std::endl;
+    Conta suaConta("Alien", 123);
+    Conta contaDeles("Predador", 456);
+    Conta minhaConta("Grogu", 789);
+
+    // Na Heap para mais memória (Ponteiro)
+    // Conta* nossaConta = new Conta("APG", 147);
+    // std::cout << "Titular: " << nossaConta->titular() << std::endl;
+
+    std::cout << "numeroDeContas: " << Conta::contas() << std::endl;
+    std::cout << std::endl;
+
+    std::cout << "Nome do titular da conta: " << minhaConta.titular() << std::endl;
+    std::cout << "Número da conta: " << minhaConta.numero() << std::endl;
+    std::cout << "Valor da conta: " << minhaConta.saldo() << std::endl;
     std::cout << std::endl;
 
     std::cout << "Sacando 25..." << std::endl;
-    MinhaConta.sacar(25);
-    std::cout << "Valor da conta: " << MinhaConta.saldo() << std::endl;
+    minhaConta.sacar(25);
+    std::cout << "Valor da conta: " << minhaConta.saldo() << std::endl;
     std::cout << std::endl;
     
     std::cout << "Depositando 100..." << std::endl;
-    MinhaConta.depositar(100);
-    std::cout << "Valor da conta: " << MinhaConta.saldo() << std::endl;
+    minhaConta.depositar(100);
+    std::cout << "Valor da conta: " << minhaConta.saldo() << std::endl;
 
     std::cout << std::endl;
     std::cout << "Sacando 25..." << std::endl;
-    MinhaConta.sacar(25);
-    std::cout << "Valor da conta: " << MinhaConta.saldo() << std::endl;
+    minhaConta.sacar(25);
+    std::cout << "Valor da conta: " << minhaConta.saldo() << std::endl;
     
     return 0;
 }

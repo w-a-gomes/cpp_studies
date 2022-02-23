@@ -4,19 +4,31 @@
 
 class Conta
 {
+// class
 private:
-    std::string NomeDoTitular;
-    int NumeroDaConta;
-    int Valor;
+    static int numeroDeContas;
+public:
+    static int contas();
+
+// instance
+private:
+    std::string nomeDoTitular;
+    int numeroDaConta;
+    int valor;
 
 public:
-    // Conta() = delete;
-    Conta(std::string NomeDoTitular, int NumeroDaConta);
+    // Constructor and Destructor
+    // Conta() = delete;  // Deleta construtor padrão
+    explicit Conta(std::string nomeDoTitular, int numeroDaConta);
+    ~Conta();
 
+    // Getters
     std::string titular() const;
     int numero() const;
     int conta() const;
-    void sacar(int valor);
-    void depositar(int valor);
     int saldo() const;
+
+    // Setters
+    void sacar(int valor);
+    void depositar(int valor);  
 };
