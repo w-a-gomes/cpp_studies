@@ -5,18 +5,21 @@
 
 // static (class var)
 int Conta::numeroDeContas = 0;
+int Conta::ultimoNumeroDeConta = 100;
+
 
 // Constructor
-Conta::Conta(std::string nomeDoTitular, int numeroDaConta):
-    nomeDoTitular(nomeDoTitular), numeroDaConta(numeroDaConta), valor(0)
+Conta::Conta(Titular titular):_titular(titular)
 {
     numeroDeContas++;
+    ultimoNumeroDeConta++;
 }
 
 // Destructor
 Conta::~Conta()
 {
     numeroDeContas--;
+    ultimoNumeroDeConta--;
 }
 
 // class method
@@ -26,36 +29,31 @@ int Conta::contas()
 }
 
 // Getters
-std::string Conta::titular() const
+std::string Conta::nomeTitular()
 {
-    return this->nomeDoTitular;
+    return this->_titular.nome();
 }
 
-int Conta::numero() const
+int Conta::numero()
 {
-    return this->numeroDaConta;
+    return this->_numero;
 }
 
-int Conta::conta() const
+int Conta::saldo()
 {
-    return this->numeroDaConta;
-}
-
-int Conta::saldo() const
-{
-    return this->valor;
+    return this->_valor;
 }
 
 // Setters
 void Conta::sacar(int valor)
 {
-    if (valor > this->valor) {
+    if (valor > this->_valor) {
         std::cout << "Saldo insuficiente!" << std::endl;
     } else if (valor < 0) {
         std::cout << "Valor inválido!" << std::endl;
     } else {
-    int novoValor = this->valor - valor;
-    this->valor = novoValor;
+    int novoValor = this->_valor - valor;
+    this->_valor = novoValor;
     }
 }
 
@@ -64,8 +62,8 @@ void Conta::depositar(int valor)
     if (valor < 0) {
         std::cout << "Valor inválido!" << std::endl;
     } else {
-    int novoValor = this->valor + valor;
-    this->valor = novoValor;
+    int novoValor = this->_valor + valor;
+    this->_valor = novoValor;
     }
     
 }
