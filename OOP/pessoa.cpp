@@ -4,7 +4,7 @@
 
 Pessoa::Pessoa(std::string nome, std::string cpf):_nome(nome), _cpf(cpf)
 {
-    this->_protected_value = "OCULTO";
+    this->_medo = "Fantasma";
 }
 
 std::string Pessoa::nome()

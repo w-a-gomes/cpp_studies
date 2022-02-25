@@ -43,6 +43,7 @@ int main() {
     Funcionario funcionario("Gomez", "123789654", 2000.00);
     std::cout << funcionario.nome() << std::endl;
     std::cout << funcionario.salario() << std::endl;
+    std::cout << funcionario.medo() << std::endl;
     
     return 0;
-}
+} 
