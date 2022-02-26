@@ -9,6 +9,11 @@ Funcionario::Funcionario(std::string nome, std::string cpf, double salario)
     //
 }
 
+std::string Funcionario::nome()
+{
+    return this->_nome;
+}
+
 double Funcionario::salario()
 {
     return this->_salario;

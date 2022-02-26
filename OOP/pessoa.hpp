@@ -12,7 +12,7 @@ protected:
 public:
     explicit Pessoa(std::string nome, std::string cpf);
 
-    std::string nome();
+    virtual std::string nome();
     std::string cpf();
 
 private:

@@ -1,19 +1,60 @@
 https://en.cppreference.com/w/cpp/io/basic_ifstream
 https://www.cplusplus.com/reference/fstream/ifstream/
 
-
+----------
 Valor absoluto sem numeros negativos
     abs(numero1 + numero2)
 
+----------
 tamanho da palavra é size()
 
+----------
 Não se inclui o arquivo ".cpp" e sim o header ".hpp".
 
+----------
 O que foi incluido no Header file (hpp) não precisa
 ser incuido no seu arquivo equivalente (cpp)
 
+----------
 Variaveis globais são definidas nas libs como "extern".
 
+----------
 "static" mantem as variaveis globais dentro de uma unidade de tradução
 
+----------
 Sobrecarga: Funções com nome igual e assinaturas diferentes
+
+----------
+ternario
+float taxa = tipoConta == 1 ? 0.05 : 0.03;
+
+======================================================
+OOP
+
+Se classe base tem atributo _name e a classe filha tbm,
+então o método getaName() da classe filha, repupera o
+_name dela propria.
+Para recuperar o _name da classe base, pode-se usar o
+nome da classe como namespace:
+    this->BaseClass::_name;
+
+ou melhor:
+    BaseClass::_name;
+
+----------
+Na Heap para mais memória (Ponteiro)
+    Conta* nossaConta = new Conta("APG", 147);
+    std::cout << "Titular: " << nossaConta->titular() << std::endl;
+    delete nossaConta;
+
+----------
+métodos virtuais forçam o compilador a trabalhar com o
+método do tipo certo que o chamou.
+
+----------
+override checa se o método a ser reescrito existe mesmo (hpp).
+override fica na classe derivada/filha, porem a classe base
+não pode ter esse método como prioritário, ou seja, sempre chamado
+até em tipos derivados, então para que funcione, esse método
+na classe base de ser virtual, ou seja, perder prioridade.
+

@@ -10,10 +10,6 @@ int main() {
     Conta contaDeles(Titular("Predador", "987654321"));
     Conta minhaConta(Titular("Grogu", "369258147"));
 
-    // Na Heap para mais memória (Ponteiro)
-    // Conta* nossaConta = new Conta("APG", 147);
-    // std::cout << "Titular: " << nossaConta->titular() << std::endl;
-
     std::cout << "numeroDeContas: " << Conta::contas() << std::endl;
     std::cout << std::endl;
 
@@ -43,7 +39,7 @@ int main() {
     Funcionario funcionario("Gomez", "123789654", 2000.00);
     std::cout << funcionario.nome() << std::endl;
     std::cout << funcionario.salario() << std::endl;
-    std::cout << funcionario.medo() << std::endl;
+    std::cout << funcionario.medo() << std::endl; 
     
     return 0;
 } 
