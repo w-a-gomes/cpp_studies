@@ -3,7 +3,7 @@
 #include <string>
 #include "pessoa.hpp"
 
-class Titular : public Pessoa
+class Titular final : public Pessoa
 {
 public:
     explicit Titular(std::string nome, std::string cpf);

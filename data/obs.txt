@@ -31,30 +31,92 @@ float taxa = tipoConta == 1 ? 0.05 : 0.03;
 ======================================================
 OOP
 
-Se classe base tem atributo _name e a classe filha tbm,
-então o método getaName() da classe filha, repupera o
+Se 'classe' base tem atributo _name e a 'classe' filha tbm,
+então o 'método' getaName() da 'classe' filha, recupera o
 _name dela propria.
-Para recuperar o _name da classe base, pode-se usar o
-nome da classe como namespace:
+Para recuperar o _name da 'classe' base, pode-se usar o
+nome da 'classe' como namespace:
     this->BaseClass::_name;
 
 ou melhor:
     BaseClass::_name;
 
 ----------
-Na Heap para mais memória (Ponteiro)
+Na 'Heap' para mais memória (Ponteiro)
     Conta* nossaConta = new Conta("APG", 147);
     std::cout << "Titular: " << nossaConta->titular() << std::endl;
     delete nossaConta;
 
 ----------
-métodos virtuais forçam o compilador a trabalhar com o
-método do tipo certo que o chamou.
+'métodos virtuais' forçam o compilador a trabalhar com o
+'método' do tipo certo que o chamou.
 
 ----------
-override checa se o método a ser reescrito existe mesmo (hpp).
-override fica na classe derivada/filha, porem a classe base
-não pode ter esse método como prioritário, ou seja, sempre chamado
-até em tipos derivados, então para que funcione, esse método
-na classe base de ser virtual, ou seja, perder prioridade.
+"override" checa se o 'método' a ser reescrito existe mesmo (hpp).
+"override" fica na 'classe' derivada/filha, porem a 'classe' base
+não pode ter esse 'método' como prioritário, ou seja, sempre chamado
+até em 'tipos' derivados, então para que funcione, esse 'método'
+na 'classe' base de ser "virtual", ou seja, perder prioridade.
 
+__________
+Uma 'classe' que pode ser extendida e tem um 'destrutor' 'implementado', o 
+'destrutor' deve ser marcado como "virtual", para que as implementações
+filhas possam ser destruidas junto.
+
+classes finais não precisam.
+
+    class Base
+        Base(){...}
+        virtual ~Base(){...}
+        
+    class Child : public Base
+
+    Base *var = new Child();
+    delete var;
+
+__________
+Use "explicit" para chamar o 'construtor' correto sem 'conversão implícita'
+
+----------
+Use "final" para definir uma classe que não pode ser herdada
+    class Child final : public Base
+
+----------
+"const":
+    std::string nomeTitular() const;
+"const" só faz sentido se recebe parametro. é o contrato de não alterar, só ler.
+
+----------
+"method() = 0" - Métodos e classes abstratas
+Serve para definir na classe base genérica, um método que será
+implementado nas 'classes filhas', principalmente se a 'classe filha' for "final".
+Assim, na 'classe base genérica', esse método "method() = 0" não precisa ser implementado
+    std::string method() const = 0;
+    std::string method() = 0;
+
+'Classes abstratas' Servem tbm como interface para o polimorfismo, ou seja, um tipo genêrico.
+
+----------
+Herança multipla
+problema diamante é resolvido com VTAble:
+                                A
+    B : public virtual A                       C : public virtual A
+                            D : public B, C
+
+e métodos podem ser explicitados usando o nome do tipo como um namespace
+    D : public B, C {}
+    D var();
+    var.method();
+    var.A::method();
+    var.B::method();
+    var.C::method();
+
+Também pode-se usar método abstrato
+    class A
+        void metod() = 0};
+    class B
+        void metod() = 0};
+    class C : public A, B 
+        void metod() override;
+
+----------

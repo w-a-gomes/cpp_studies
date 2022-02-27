@@ -9,6 +9,13 @@ int main() {
     Conta suaConta(Titular("Alien", "123456789"));
     Conta contaDeles(Titular("Predador", "987654321"));
     Conta minhaConta(Titular("Grogu", "369258147"));
+    Conta* contaPonteiro = new Conta(Titular("Ponteiro", "951375284"));
+
+    std::cout << "numeroDeContas: " << Conta::contas() << std::endl;
+    std::cout << std::endl;
+    
+    std::cout << "delete contaPonteiro..." << std::endl;
+    delete contaPonteiro;
 
     std::cout << "numeroDeContas: " << Conta::contas() << std::endl;
     std::cout << std::endl;

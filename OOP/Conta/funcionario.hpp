@@ -2,7 +2,7 @@
 
 #include "pessoa.hpp"
 
-class Funcionario : public Pessoa
+class Funcionario final : public Pessoa
 {
 private:
     int _salario;
