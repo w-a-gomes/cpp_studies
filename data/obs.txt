@@ -57,9 +57,8 @@ Na 'Heap' para mais memória (Ponteiro)
 não pode ter esse 'método' como prioritário, ou seja, sempre chamado
 até em 'tipos' derivados, então para que funcione, esse 'método'
 na 'classe' base de ser "virtual", ou seja, perder prioridade.
-
 __________
-Uma 'classe' que pode ser extendida e tem um 'destrutor' 'implementado', o 
+Uma 'classe' que pode ser extendida e tem um 'destrutor' implementado, o 
 'destrutor' deve ser marcado como "virtual", para que as implementações
 filhas possam ser destruidas junto.
 
@@ -99,7 +98,7 @@ Assim, na 'classe base genérica', esse método "method() = 0" não precisa ser 
 ----------
 Herança multipla
 problema diamante é resolvido com VTAble:
-                                A
+                                  A
     B : public virtual A                       C : public virtual A
                             D : public B, C
 
@@ -113,10 +112,17 @@ e métodos podem ser explicitados usando o nome do tipo como um namespace
 
 Também pode-se usar método abstrato
     class A
-        void metod() = 0};
+        void method() = 0};
     class B
-        void metod() = 0};
+        void method() = 0};
     class C : public A, B 
-        void metod() override;
+        void method() override;
 
 ----------
+
+Ver +
+    variant
+    get_if
+
+    template de função
+    template de classe
